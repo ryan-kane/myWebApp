@@ -1,2 +1,2 @@
 # myWebApp
-Web application to host website
+Simple web application to show projects and personal info
