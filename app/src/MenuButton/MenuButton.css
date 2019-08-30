@@ -1,0 +1,12 @@
+div.menu-button-container {
+    background-color: black;
+    margin: 30px;
+}
+
+a.menu-button {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
