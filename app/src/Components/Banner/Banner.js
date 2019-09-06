@@ -4,13 +4,8 @@ import './Banner.css';
 class Banner extends React.Component{
 
     handleMenuClick = (e) => {
-        e.preventDefault();
-        let banner_menu = e.target.parentElement.parentElement;
-        let current = banner_menu.getElementsByClassName("active");
-        if(current.length > 0){
-            current[0].classList.toggle('active');
-        }
-        e.target.parentElement.classList.toggle('active');
+        // e.preventDefault();
+        this.props.pageSwitch(e);
     }
 
     render(){
@@ -18,7 +13,9 @@ class Banner extends React.Component{
             <div className="banner-container">
                 <div className="banner"> 
                     <div className="banner-header">
-                        <h1 className="banner-title">Ryan Kane</h1>            
+                        <h1 className="banner-title">
+                            <a className="menu-button" href="#home" onClick={this.handleMenuClick}>Ryan Kane</a>
+                        </h1>            
                     </div>
                     <div className="banner-body" ref={this.banner_ref}>
                         <ul className="banner-menu-list">
@@ -29,7 +26,7 @@ class Banner extends React.Component{
                             </li>
                             <li className="banner-menu-item">
                                 <a className="menu-button" href="#resume" onClick={this.handleMenuClick}>
-                                    Projects
+                                    Resume
                                 </a>
                             </li>
                         </ul>

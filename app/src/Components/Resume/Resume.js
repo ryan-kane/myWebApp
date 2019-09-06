@@ -3,7 +3,12 @@ import './Resume.css';
 
 
 function Resume(){
-    return(<div></div>);
+    return(
+    <div className="card resume-card">
+        <div className="resume-table">
+        </div>
+    </div>);
+
 }
 
 export default Resume;

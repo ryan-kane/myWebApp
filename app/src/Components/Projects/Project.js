@@ -2,10 +2,10 @@ import React from 'react';
 import './Project.css';
 
 function Project(props){
-    let project = props.project;
+    let name = props.name;
     return(
-        <li>
-            {project};
+        <li className="project-list-item">
+            {name};
         </li>
     );
 }
