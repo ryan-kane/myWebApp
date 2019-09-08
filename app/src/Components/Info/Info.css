@@ -1,0 +1,41 @@
+.info-container{
+    position: absolute;
+    overflow: hidden;
+    width: 75%;
+    height: 75%;
+    transition: left 1s;
+
+    /* parallax */
+    transform: translateZ(4px) scale(0.5);
+    top: 20%;
+    left: -30%;
+}
+
+.info-title {
+    width: 30%;
+    white-space: nowrap;
+    transition: width 1s;
+    border-bottom: 1px solid;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+}
+  
+.info-title:hover{
+    width: 0%;
+    text-decoration: none;
+    color: darkslategray;
+    font-style: oblique;
+}
+
+.info-paragraph {
+    /* white-space: nowrap; */
+    text-align: left;
+    padding: 2%;
+    width: 60vw;
+}
+
+.info-container.active{
+    left: 5%;
+    /* top: 20%; */
+}
