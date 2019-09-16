@@ -1,4 +1,4 @@
-const ProjectStore = {
+const Store = {
     projects: [
         {
             name: "Simple Website",
@@ -9,7 +9,16 @@ const ProjectStore = {
                 an Express api server using GraphQL on top of a MongoDB database 
                 for the backend. `
         }
-    ]
+    ],
+
+    about_me: {
+        title: "About Me",
+        paragraph: "About Me"
+    },
+
+    resume: {
+        download: 'RyanKaneResume'
+    }
 };
 
-export default ProjectStore;
+export default Store;

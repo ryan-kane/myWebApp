@@ -20,13 +20,13 @@ class Banner extends React.Component{
                     <div className="banner-body" ref={this.banner_ref}>
                         <ul className="banner-menu-list">
                             <li className="banner-menu-item">
-                                <a className="menu-button projects" href="#projects" onClick={this.handleMenuClick}>
-                                    Projects
+                                <a className="menu-button resume" href="#resume" onClick={this.handleMenuClick}>
+                                    Resume
                                 </a>
                             </li>
                             <li className="banner-menu-item">
-                                <a className="menu-button resume" href="#resume" onClick={this.handleMenuClick}>
-                                    Resume
+                                <a className="menu-button projects" href="#projects" onClick={this.handleMenuClick}>
+                                    Projects
                                 </a>
                             </li>
                         </ul>

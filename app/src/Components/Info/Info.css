@@ -1,30 +1,31 @@
 .info-container{
     position: absolute;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 75%;
     height: 75%;
     transition: left 1s;
 
     /* parallax */
     transform: translateZ(4px) scale(0.5);
-    top: 20%;
+    top: 5%;
     left: -30%;
 }
 
 .info-title {
+    font-size: 4vh;
     width: 30%;
     white-space: nowrap;
     transition: width 1s;
     border-bottom: 1px solid;
     text-align: left;
     text-decoration: none;
-    color: black;
+    color: #160F29;
 }
   
 .info-title:hover{
     width: 0%;
     text-decoration: none;
-    color: darkslategray;
+    color: #246A73;
     font-style: oblique;
 }
 
@@ -33,6 +34,7 @@
     text-align: left;
     padding: 2%;
     width: 60vw;
+    font-size: 3vh;
 }
 
 .info-container.active{

@@ -1,17 +1,13 @@
 import React from 'react';
 import './Info.css';
+import Store from '../../Store'
 
 function Info(props){
     return(
         <div className="info-container">
-            <div className="info-title">About me paragraph.</div>
+            <div className="info-title">{Store.about_me.title}</div>
             <p className="info-paragraph">
-                About me paragraph. About me paragraph. About me paragraph.
-                <br/> 
-                <br/>
-                About me paragraph.
-                About me paragraph. About me paragraph. About me paragraph. About me paragraph.
-                About me paragraph. About me paragraph. About me paragraph. About me paragraph.
+                {Store.about_me.paragraph}
             </p>
         </div>
     );

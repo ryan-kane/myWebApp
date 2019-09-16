@@ -12,14 +12,20 @@ class Projects extends React.Component{
             list_projects = projects.map((project, index) => 
                 <li key={index} className="project-list-item">
                     <div className="project-container">
-                        <div>{project.name}</div> 
+                        <div className="project-name">{project.name}</div> 
                         <ul className="project-list">
                             <li>
-                                <a className="project-link" hrefLang={project.githubLink}>
-                                    View on Github
-                                </a>
+                                <p className="description">
+                                    {project.description}
+                                </p>
                             </li>
-                            <li>{project.description}</li>
+                            <li>
+                                <div className="project-link-container">
+                                    <a className="project-link" href={project.githubLink} target="_blank">
+                                        View on Github
+                                    </a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -29,9 +35,9 @@ class Projects extends React.Component{
         return(
             <div className="card projects-card">
                 <div className="projects-table">
-                    <ul className="project-list">
+                    <ol className="projects-list">
                         {list_projects}
-                    </ul>
+                    </ol>
                 </div>
             </div>
         );
