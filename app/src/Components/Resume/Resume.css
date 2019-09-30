@@ -2,6 +2,54 @@
   display: block;
   background-color:  rgb(22, 15, 41, 0.5);
   width: 100%;
-  height: 150%;
+  /* height: 105vh; */
   border-radius: 5px;
+  color: #F3DFC1;
+  text-align: left;
+}
+
+.section {
+  padding: 2%;
+  white-space: normal;
+}
+
+h3 {
+  font-size: initial;
+}
+
+.tool-par {
+  white-space: normal;
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list-item {
+  border: 1px solid rgb(255, 252, 247); 
+  margin-top: 2%;
+  padding: 1%;
+}
+
+.skill-par {
+  white-space: normal;
+}
+
+.work-experience-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.work-experience-item {
+  padding-top: 2%;
+}
+
+.work-experience-item-container {
+  border: 1px solid rgb(255, 252, 247);
+  padding: 1%;
+}
+
+.job-desc-item {
+  white-space: normal;
 }

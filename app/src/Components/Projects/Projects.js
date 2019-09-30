@@ -12,21 +12,25 @@ class Projects extends React.Component{
             list_projects = projects.map((project, index) => 
                 <li key={index} className="project-list-item">
                     <div className="project-container">
-                        <div className="project-name">{project.name}</div> 
-                        <ul className="project-list">
-                            <li>
-                                <p className="description">
-                                    {project.description}
-                                </p>
-                            </li>
-                            <li>
-                                <div className="project-link-container">
-                                    <a className="project-link" href={project.githubLink} target="_blank">
-                                        View on Github
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
+                        <div className="project-name-container">
+                            <h1 className="project-name">{project.name}</h1>
+                        </div> 
+                        <div className="project-list-container">
+                            <ul className="project-list">
+                                <li>
+                                    <p className="description">
+                                        {project.description}
+                                    </p>
+                                </li>
+                                <li>
+                                    <div className="project-link-container">
+                                        <a className="project-link" href={project.githubLink} rel="noopener noreferrer" target="_blank">
+                                            View on Github
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </li>
             );
@@ -35,9 +39,9 @@ class Projects extends React.Component{
         return(
             <div className="card projects-card">
                 <div className="projects-table">
-                    <ol className="projects-list">
+                    <ul className="projects-list">
                         {list_projects}
-                    </ol>
+                    </ul>
                 </div>
             </div>
         );

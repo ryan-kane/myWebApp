@@ -13,6 +13,7 @@ class App extends React.Component {
     super(props);
     this.info_toggle = this.info_toggle.bind(this);
     this.page_switch = this.page_switch.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount(){
@@ -23,6 +24,15 @@ class App extends React.Component {
       }
     }, 500);
     this.page_switch(false);
+    document.getElementsByClassName('app-wrapper')[0].addEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(e){
+    if(e.target.scrollTop > e.target.scrollHeight*1/2){
+      this.showBanner();
+    }else{
+      this.hideBanner();
+    }
   }
 
   get_projects(){
@@ -50,8 +60,8 @@ class App extends React.Component {
     if(e){
       loc = e.target.href.split("/")[e.target.href.split("/").length - 1]; 
     }
-    console.log(loc)
     let app_wrapper = document.getElementsByClassName('app-wrapper')[0];
+    let banner_container = document.getElementsByClassName('banner-container')[0];
     let projects_card = document.getElementsByClassName("projects-card")[0];
     let content_wrapper = document.getElementsByClassName("content-wrapper")[0];
     let resume_card = document.getElementsByClassName("resume-card")[0];
@@ -59,6 +69,7 @@ class App extends React.Component {
 
     if (!loc || loc === "#home"){
       // move to title page
+      app_wrapper.scrollTop = 0;
       if(e && e.target.className === "title-button"){
         this.info_toggle(e);
       }
@@ -66,8 +77,6 @@ class App extends React.Component {
       for(let i = 0; i < items.length; i++){
         items[i].classList.toggle('active');
       }
-      app_wrapper.scrollTop = 0;
-      this.hideBanner();
       return
     }else if(loc === "#projects" ){
       // move to project card
@@ -75,18 +84,19 @@ class App extends React.Component {
       for(let i = 0; i < items.length; i++){
         items[i].classList.toggle('active');
       }
-      app_wrapper.scrollTop = content_wrapper.offsetTop;
+      app_wrapper.scrollTop = banner_container.offsetTop;
       content_wrapper.scrollLeft = projects_card.offsetLeft;
-      setTimeout(this.showBanner, 1000);
+      
     }else if(loc === "#resume"){
       // move to resume card
       items = document.getElementsByClassName("resume");
       for(let i = 0; i < items.length; i++){
         items[i].classList.toggle('active');
       }
-      app_wrapper.scrollTop = content_wrapper.offsetTop;
+      app_wrapper.scrollTop = banner_container.offsetTop;
+      console.log(banner_container.offsetTop);
       content_wrapper.scrollLeft = resume_card.offsetLeft;
-      window.setTimeout(this.showBanner, 1000);
+      
     }
   }
 

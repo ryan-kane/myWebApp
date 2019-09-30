@@ -49,7 +49,7 @@ Dark to Light
 .title {
   width: 50%;
   /* height: 15vh; */
-  transition: all 1s;
+  transition: all 1s ease;
   border-bottom: 1px solid;
   text-align: left;
   text-decoration: none;
@@ -58,7 +58,6 @@ Dark to Light
 
 a.title-button, a.title-button:hover{
   font-size: 8vw;
-  transition: color 1s;
   color: inherit;
   text-decoration: none;
   border: none;
@@ -78,7 +77,7 @@ a.title-button, a.title-button:hover{
   z-index: 1;
   width: 50%;
   top: 53vh;
-  transition: all 1s;
+  transition: all 1s ease;
 }
 
 .name-title {
@@ -129,7 +128,7 @@ a.title-button, a.title-button:hover{
 
 .content-wrapper {
   background: transparent;
-  height: 90%;
+  height: 100%;
   width: 100%;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -149,8 +148,9 @@ a.title-button, a.title-button:hover{
   border: none;
   border-radius: 0px;
   display: inline-block;
-  width: 100%;
   height: 100%;
+  white-space: nowrap;
+  width: 100%;
   overflow-x: hidden;
   padding: 5%;
 }
