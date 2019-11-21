@@ -28,7 +28,9 @@ class App extends React.Component {
   }
 
   handleScroll(e){
-    if(e.target.scrollTop > e.target.scrollHeight*1/2){
+    let app_wrapper = document.getElementsByClassName('app-wrapper')[0]
+    let content_wrapper = document.getElementsByClassName('content-wrapper')[0]
+    if(app_wrapper.scrollTop >= content_wrapper.offsetTop - 200){
       this.showBanner();
     }else{
       this.hideBanner();
@@ -58,13 +60,11 @@ class App extends React.Component {
     }
     var loc = window.location.hash;
     if(e){
-      loc = e.target.href.split("/")[e.target.href.split("/").length - 1]; 
+      loc = e.target.href.split("/")[e.target.href.split("/").length - 1];
     }
     let app_wrapper = document.getElementsByClassName('app-wrapper')[0];
-    let banner_container = document.getElementsByClassName('banner-container')[0];
-    let projects_card = document.getElementsByClassName("projects-card")[0];
-    let content_wrapper = document.getElementsByClassName("content-wrapper")[0];
-    let resume_card = document.getElementsByClassName("resume-card")[0];
+    let projects_table = document.getElementsByClassName("projects-table")[0];
+    let resume_table = document.getElementsByClassName("resume-table")[0];
     let items = [];
 
     if (!loc || loc === "#home"){
@@ -84,8 +84,8 @@ class App extends React.Component {
       for(let i = 0; i < items.length; i++){
         items[i].classList.toggle('active');
       }
-      app_wrapper.scrollTop = banner_container.offsetTop;
-      content_wrapper.scrollLeft = projects_card.offsetLeft;
+      // app_wrapper.scrollTop = projects_table.scrollHeight;
+      projects_table.scrollIntoView();
       
     }else if(loc === "#resume"){
       // move to resume card
@@ -93,11 +93,11 @@ class App extends React.Component {
       for(let i = 0; i < items.length; i++){
         items[i].classList.toggle('active');
       }
-      app_wrapper.scrollTop = banner_container.offsetTop;
-      console.log(banner_container.offsetTop);
-      content_wrapper.scrollLeft = resume_card.offsetLeft;
+      // app_wrapper.scrollTop = resume_contianer.scrollHeight;
+      resume_table.scrollIntoView();
       
     }
+    console.log(projects_table.attributes);
   }
 
   showBanner(){
@@ -129,17 +129,15 @@ class App extends React.Component {
     return(
       <div className="App">
         <div className="app-wrapper" name="app-wrapper">
+          <Banner pageSwitch={this.page_switch}/>
           <div className="parallax-back" name="parallax-back"></div>
           <Title titleText="Ryan Kane" titleClass="name-title title-parallax" titleHref="#home" onClick={this.info_toggle}/>
           <Title titleText="Resume" titleClass="resume-title title-parallax" titleHref="#resume" onClick={this.page_switch}/>
           <Title titleText="Projects" titleClass="projects-title title-parallax" titleHref="#projects" onClick={this.page_switch}/>
           <Info/>
-          <Banner pageSwitch={this.page_switch}/>
           <div className="content-wrapper">
-            <div className="content-container">
               <Resume className="resume"/>
               <Projects className="projects" projects_obj={projects_obj}/>
-            </div>
           </div>
         </div>
       </div>  

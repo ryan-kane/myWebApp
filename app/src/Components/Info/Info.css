@@ -2,12 +2,11 @@
     position: absolute;
     /* overflow: hidden; */
     width: 75%;
-    height: 75%;
+    /* height: 75%; */
     transition: left 1s;
-
     /* parallax */
     transform: translateZ(4px) scale(0.5);
-    top: 5%;
+    top: 20%;
     left: -30%;
 }
 
@@ -19,13 +18,13 @@
     border-bottom: 1px solid;
     text-align: left;
     text-decoration: none;
-    color: #160F29;
+    color: var(--second-light);
 }
   
 .info-title:hover{
     width: 0%;
     text-decoration: none;
-    color: #246A73;
+    color: var(--middle);
     font-style: oblique;
 }
 
@@ -35,6 +34,7 @@
     padding: 2%;
     width: 60vw;
     font-size: 3vh;
+    color: var(--second-light);
 }
 
 .info-container.active{

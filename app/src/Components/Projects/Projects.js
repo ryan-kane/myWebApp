@@ -37,12 +37,11 @@ class Projects extends React.Component{
         }
     
         return(
-            <div className="card projects-card">
-                <div className="projects-table">
-                    <ul className="projects-list">
-                        {list_projects}
-                    </ul>
-                </div>
+            <div className="projects-table">
+                <h1 className="project-name">Projects</h1>
+                <ul className="projects-list">
+                    {list_projects}
+                </ul>
             </div>
         );
     }

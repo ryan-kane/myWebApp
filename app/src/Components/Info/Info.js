@@ -8,6 +8,8 @@ function Info(props){
             <div className="info-title">{Store.about_me.title}</div>
             <p className="info-paragraph">
                 {Store.about_me.paragraph}
+                <br></br>
+                <a className="info-title" href={Store.about_me.linkedin}>LinkedIn</a>
             </p>
         </div>
     );

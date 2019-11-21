@@ -4,7 +4,6 @@ import './Resume.css';
 
 function Resume(){
     return(
-    <div className="card resume-card">
         <div className="resume-table">
             <div className="resume-container">
                 <div className="header-section section">
@@ -149,8 +148,7 @@ function Resume(){
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>);
+        </div>);
 
 }
 

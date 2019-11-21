@@ -34,20 +34,20 @@
 
 .menu-button {
     padding: 1vh;
-    color: #F3DFC1;
+    color: var(--main-light);
     text-align: center;
     text-decoration: none;
-    border-bottom: 1px solid #160F29;
+    border-bottom: 0px solid var(--second-light);
     transition: border-bottom .5s, background-color 1s, margin 1s;
 }
 
 .menu-button.active {
-    border-bottom: 1px solid #DDBEA8;
+    border-bottom: 1px solid var(--middle);
 }
 
 .menu-button:hover {
-    background-color: #368F8B;
+    background-color: var(--second-light);
     margin: 1vh;
     text-decoration: none;
-    color: #DDBEA8;
+    color: var(--middle);
 }
